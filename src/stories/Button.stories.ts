@@ -7,7 +7,26 @@ export default {
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
+    label: {control: 'text', defaultValue: 'Button'}
   },
+  parameters: {
+    backgrounds: {
+      values: [
+        {name: 'dark-mode', value: '#000'}
+      ]
+    },
+    viewport: {
+      viewports: {
+        screen4k: {
+          name: 'Large 4k screen',
+          styles: {
+            width: '3840px',
+            height: '2160px'
+          }
+        }
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<Button> = (args: Button) => ({
@@ -23,7 +42,7 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: 'Click me!',
 };
 
 export const Large = Template.bind({});

@@ -402,14 +402,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Base",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/link/stories/link.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -432,6 +424,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "Examples",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/link/stories/link.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -534,31 +534,13 @@
                 "subtype": "variable",
                 "file": "src/app/components/link/stories/link.stories.ts",
                 "type": "Story<LinkComponent>",
-                "defaultValue": "() => ({\n  component: LinkComponent,\n  props: {\n    content: text('Text', 'Visit Storybook'),\n    href: 'https://storybook.js.org/',\n    target: select('Target', ['_self', '_blank', '_parent', '_top'] , '_blank'),\n  },\n  template: `\n    <app-link\n      [href]=\"href\"\n      [target]=\"target\"\n    >\n      {{ content }}\n    </app-link>\n  `,\n})"
+                "defaultValue": "() => ({\n  component: LinkComponent,\n  props: {\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\n    content: text('Text', 'Visit Storybook'),\n    href: 'https://storybook.js.org/',\n    target: '_blank',\n  },\n  template: `\n    <app-link\n      [color]=\"color\"\n      [href]=\"href\"\n      [target]=\"target\"\n    >\n      {{ content }}\n    </app-link>\n  `,\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/components/link/stories/link.stories.ts": [
-                {
-                    "name": "Base",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/link/stories/link.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/link/stories/link.stories.ts",
-                    "type": "Story<LinkComponent>",
-                    "defaultValue": "() => ({\n  component: LinkComponent,\n  props: {\n    content: text('Text', 'Visit Storybook'),\n    href: 'https://storybook.js.org/',\n    target: select('Target', ['_self', '_blank', '_parent', '_top'] , '_blank'),\n  },\n  template: `\n    <app-link\n      [href]=\"href\"\n      [target]=\"target\"\n    >\n      {{ content }}\n    </app-link>\n  `,\n})"
-                }
-            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -594,6 +576,24 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/app/components/link/stories/link.stories.ts": [
+                {
+                    "name": "Examples",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/link/stories/link.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/link/stories/link.stories.ts",
+                    "type": "Story<LinkComponent>",
+                    "defaultValue": "() => ({\n  component: LinkComponent,\n  props: {\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\n    content: text('Text', 'Visit Storybook'),\n    href: 'https://storybook.js.org/',\n    target: '_blank',\n  },\n  template: `\n    <app-link\n      [color]=\"color\"\n      [href]=\"href\"\n      [target]=\"target\"\n    >\n      {{ content }}\n    </app-link>\n  `,\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -732,7 +732,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Base",
+                "name": "Examples",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
